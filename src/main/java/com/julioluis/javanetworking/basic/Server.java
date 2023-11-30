@@ -1,4 +1,4 @@
-package com.julioluis.javanetworking;
+package com.julioluis.javanetworking.basic;
 
 import java.io.IOException;
 import java.io.InputStream;
