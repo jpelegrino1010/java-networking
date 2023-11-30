@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Client {
 
@@ -14,7 +15,11 @@ public class Client {
         InputStream in=socket.getInputStream();
         OutputStream out=socket.getOutputStream();
 
-        out.write("c".getBytes());
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Sending request");
+        String product=scanner.nextLine();
+
+        out.write(product.getBytes());
 
         byte response []=new byte[100];
         in.read(response);

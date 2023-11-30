@@ -15,11 +15,12 @@ public class Server {
         QuoteService quoteService=new QuoteService();
 
        while (true) {
+           System.out.println("waiting for clients");
            Socket socket=serverSocket.accept();
 
            InputStream in=socket.getInputStream();
            OutputStream out=socket.getOutputStream();
-
+           System.out.println("Waiting for information");
            byte request[]=new byte[100];
            in.read(request);
 
